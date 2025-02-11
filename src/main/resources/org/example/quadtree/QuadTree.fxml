@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1550.0" style="-fx-background-color: #e6e8eb;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.quadtree.Quadtree">
+   <children>
+      <GridPane fx:id="gridPane" />
+      <Button fx:id="findDepthbutton" layoutX="1205.0" layoutY="74.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #8a203e; -fx-background-radius: 10;" text="Find Depth" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="pixelDepthbutton" layoutX="1205.0" layoutY="155.0" mnemonicParsing="false" onAction="#Pixel" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #8a203e; -fx-background-radius: 10;" text="Pixel Depth" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="maskbutton" layoutX="1205.0" layoutY="238.0" mnemonicParsing="false" onAction="#Mask" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #8a203e; -fx-background-radius: 10;" text="Mask" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="subspacebutton" layoutX="1205.0" layoutY="319.0" mnemonicParsing="false" onAction="#SubSpace" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #8a203e; -fx-background-radius: 10;" text="subspace" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="compressbutton" layoutX="1205.0" layoutY="400.0" mnemonicParsing="false" onAction="#Compress" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #8a203e; -fx-background-radius: 10;" text="compress" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <TextField fx:id="pixely" layoutX="1122.0" layoutY="159.0" prefHeight="34.0" prefWidth="54.0" promptText="y">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="pixelx" layoutX="1046.0" layoutY="159.0" prefHeight="34.0" prefWidth="54.0" promptText="x">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="maskx1" layoutX="899.0" layoutY="242.0" prefHeight="34.0" prefWidth="54.0" promptText="x1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="masky1" layoutX="976.0" layoutY="242.0" prefHeight="34.0" prefWidth="54.0" promptText="y1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="maskx2" layoutX="1047.0" layoutY="242.0" prefHeight="34.0" prefWidth="54.0" promptText="x2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="masky2" layoutX="1122.0" layoutY="242.0" prefHeight="34.0" prefWidth="54.0" promptText="y2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="subspacex1" layoutX="899.0" layoutY="323.0" prefHeight="34.0" prefWidth="54.0" promptText="x1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="subspacey1" layoutX="976.0" layoutY="323.0" prefHeight="34.0" prefWidth="54.0" promptText="y1">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="subspacex2" layoutX="1047.0" layoutY="323.0" prefHeight="34.0" prefWidth="54.0" promptText="x2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="subspacey2" layoutX="1122.0" layoutY="323.0" prefHeight="34.0" prefWidth="54.0" promptText="y2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="compressSize" layoutX="1122.0" layoutY="404.0" prefHeight="34.0" prefWidth="54.0" promptText="size">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="findDepthLabel" layoutX="1302.0" layoutY="74.0" prefHeight="42.0" prefWidth="70.0">
+         <font>
+            <Font name="Lucida Fax Regular" size="34.0" />
+         </font>
+      </Label>
+      <Label fx:id="pixelDepthLabel" layoutX="1302.0" layoutY="155.0" prefHeight="42.0" prefWidth="70.0">
+         <font>
+            <Font name="Lucida Fax Regular" size="34.0" />
+         </font>
+      </Label>
+      <Button fx:id="newrootbutton" layoutX="1205.0" layoutY="480.0" mnemonicParsing="false" onAction="#newTree" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #215c8a; -fx-background-radius: 10;" text="New Tree" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="mainrootbutton" layoutX="1205.0" layoutY="556.0" mnemonicParsing="false" onAction="#MainTree" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #215c8a; -fx-background-radius: 10;" text="Main Tree" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect></Button>
+      <Button fx:id="rgb" layoutX="899.0" layoutY="480.0" mnemonicParsing="false" onAction="#RGBPhoto" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #701f6f; -fx-background-radius: 12;" text="RGB" textFill="WHITE">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="gray1" layoutX="1020.0" layoutY="480.0" mnemonicParsing="false" onAction="#Gray1Photo" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #757a7d; -fx-background-radius: 12;" text="Gray1" textFill="WHITE">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="gray2" layoutX="899.0" layoutY="556.0" mnemonicParsing="false" onAction="#Gray2Photo" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #a1a4a6; -fx-background-radius: 12;" text="Gray2" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="gray3" layoutX="1020.0" layoutY="556.0" mnemonicParsing="false" onAction="#Gray3Photo" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #5a5f63; -fx-background-radius: 12;" text="Gray3" textFill="WHITE">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="T1" layoutX="899.0" layoutY="643.0" mnemonicParsing="false" onAction="#T1Photo" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #a1a4a6; -fx-background-radius: 12;" text="T1" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="T2" layoutX="1020.0" layoutY="643.0" mnemonicParsing="false" onAction="#T2Photo" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #5a5f63; -fx-background-radius: 12;" text="T2" textFill="WHITE">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
